@@ -12,13 +12,16 @@ class Materials(models.Model):
 def __str__(self):
         return self.Obj_Id
 
-
 class Compositions(models.Model):
-        name= models.CharField(max_length=10)
+        name= models.TextField()
         percentage= models.DecimalField(max_digits=6,decimal_places=2,null=True)
-        material = models.ForeignKey(Materials,on_delete=models.PROTECT)
-        date= models.DateField(null=True)
-        price = models.DecimalField(max_digits=6,decimal_places=2,null=True)
+        date= models.DateField(null=True,blank=True)
+        price = models.DecimalField(max_digits=6,decimal_places=2,null=True,blank=True)
+        material = models.ForeignKey(Materials,on_delete=models.CASCADE,null=True,related_name='modules')
 
 def __str__(self):
         return self.name
+
+
+
+

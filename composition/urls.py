@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('materials/',views.MaterialsAPI),
-    path('seedAPI/',views.SeedAPI)
+    # path('seedAPI/',views.SeedAPI)
 ]
