@@ -3,4 +3,4 @@ release: python manage.py makemigrations
 
 release: python manage.py --no-input
 
-web: gunicorn backend.wsgi
+web: gunicorn --chdir backend backend.wsgi
